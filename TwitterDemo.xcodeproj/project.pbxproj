@@ -53,6 +53,10 @@
 			children = (
 				F864627C28490FD3007E4CFC /* TwitterDemoApp.swift */,
 				F864627E28490FD3007E4CFC /* ContentView.swift */,
+				F864628C28490FEC007E4CFC /* Views */,
+				F864628B28490FE4007E4CFC /* ViewModels */,
+				F864628A28490FDD007E4CFC /* Models */,
+				F864628D28490FFB007E4CFC /* Extensions */,
 				F864628028490FD3007E4CFC /* Assets.xcassets */,
 				F864628228490FD3007E4CFC /* Preview Content */,
 			);
@@ -65,6 +69,34 @@
 				F864628328490FD3007E4CFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F864628A28490FDD007E4CFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F864628B28490FE4007E4CFC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F864628C28490FEC007E4CFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F864628D28490FFB007E4CFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
