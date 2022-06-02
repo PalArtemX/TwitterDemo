@@ -22,7 +22,7 @@ struct TweetRowView: View {
             actionButtons
                 .padding()
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
@@ -117,6 +117,7 @@ extension TweetRowView {
             }
 
         }
+        .foregroundColor(.gray)
         .font(.subheadline)
     }
 }
