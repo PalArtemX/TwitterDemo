@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    // FIXME: - @State var selectedIndex
     @State private var selectedIndex = 0
     
     var body: some View {
