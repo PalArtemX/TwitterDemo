@@ -1,5 +1,5 @@
 //
-//  TweetFilterVM.swift
+//  TweetFilter.swift
 //  TwitterDemo
 //
 //  Created by Artem Paliutin on 05/06/2022.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum TweetFilterVM: Int, CaseIterable {
+enum TweetFilter: Int, CaseIterable {
     case tweets
     case replies
     case likes

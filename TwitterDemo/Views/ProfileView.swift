@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var selectedFilter: TweetFilterVM = .tweets
+    @EnvironmentObject var twitterVM: TwitterVM
     @Environment(\.dismiss) var dissmis
     @Namespace var animation
     
@@ -58,6 +58,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(TwitterVM())
     }
 }
 
@@ -179,14 +180,14 @@ extension ProfileView {
     // MARK: tweetFilterBar
     var tweetFilterBar: some View {
         HStack {
-            ForEach(TweetFilterVM.allCases, id: \.rawValue) { item in
+            ForEach(TweetFilter.allCases, id: \.rawValue) { item in
                 VStack {
                     Text(item.title)
                         .font(.subheadline)
-                        .fontWeight(selectedFilter == item ? .semibold : .regular)
-                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                        .fontWeight(twitterVM.selectedFilter == item ? .semibold : .regular)
+                        .foregroundColor(twitterVM.selectedFilter == item ? .black : .gray)
                     
-                    if selectedFilter == item {
+                    if twitterVM.selectedFilter == item {
                         Capsule()
                             .foregroundColor(Color(.systemBlue))
                             .frame(height: 3)
@@ -199,7 +200,7 @@ extension ProfileView {
                 }
                 .onTapGesture {
                     withAnimation(.easeInOut) {
-                        self.selectedFilter = item
+                        self.twitterVM.selectedFilter = item
                     }
                 }
             }

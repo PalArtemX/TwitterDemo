@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TwitterDemoApp: App {
+    @StateObject var twitterVM = TwitterVM()
+    
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .environmentObject(twitterVM)
         }
     }
 }
