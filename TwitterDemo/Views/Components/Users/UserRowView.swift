@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserRowView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 12.0) {
             Circle()
                 .frame(width: 48, height: 48)
             
@@ -27,7 +27,7 @@ struct UserRowView: View {
             Spacer()
             
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
