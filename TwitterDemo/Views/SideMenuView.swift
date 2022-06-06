@@ -31,21 +31,23 @@ struct SideMenuView: View {
             }
             .padding(.leading)
             
-            // MARK: -
-            ForEach(SideMenu.allCases, id: \.self) { option in
-                HStack(spacing: 16.0) {
-                    Image(systemName: option.imageName)
-                        .symbolRenderingMode(.hierarchical)
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    
-                    Text(option.title)
-                        .font(.subheadline)
-                    
-                    Spacer()
+            // MARK: - SideMenu
+            ForEach(SideMenu.allCases, id: \.self) { sideMenu in
+                if sideMenu == .profile {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        SideMenuOptionRowView(sideMenu: sideMenu)
+                    }
+                } else if sideMenu == .logout {
+                    Button {
+                        print("Handle logout here...")
+                    } label: {
+                        SideMenuOptionRowView(sideMenu: sideMenu)
+                    }
+                } else {
+                    SideMenuOptionRowView(sideMenu: sideMenu)
                 }
-                .frame(height: 40)
-                .padding(.horizontal)
             }
             .padding(.vertical, 4)
             

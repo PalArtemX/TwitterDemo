@@ -13,8 +13,10 @@ struct TwitterDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environmentObject(twitterVM)
+            NavigationView {
+                HomeView()
+                    .environmentObject(twitterVM)
+            }
         }
     }
 }

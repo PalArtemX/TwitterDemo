@@ -9,5 +9,5 @@ import Foundation
 
 
 class TwitterVM: ObservableObject {
-    @Published var selectedFilter: TweetFilter = .tweets
+    
 }
