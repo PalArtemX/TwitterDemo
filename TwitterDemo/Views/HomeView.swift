@@ -8,48 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showMenu = false
+    
+    @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            MainTabView()
-                .navigationBarHidden(showMenu)
-            
-            if showMenu {
-                ZStack {
-                    Color.black
-                        .opacity(showMenu ? 0.25 : 0)
-                }
-                .onTapGesture {
-                    withAnimation(.easeInOut) {
-                        showMenu = false
-                    }
-                }
-                .ignoresSafeArea()
+        Group {
+            if authVM.userSession == nil {
+                // MARK: - no user logged in
+                LoginView()
+            } else {
+                // MARK: - have a logged in user
+                MainInterfaceView()
+                
             }
-            
-            SideMenuView()
-                .frame(width: 300)
-                .offset(x: showMenu ? 0 : -300, y: 0)
-                .background(showMenu ? Color.white : Color.clear)
-        }
-        .navigationTitle("Home")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    withAnimation(.easeInOut) {
-                        showMenu.toggle()
-                    }
-                } label: {
-                    Circle()
-                        .frame(width: 32, height: 32)
-                }
-
-            }
-        }
-        .onAppear {
-            showMenu = false
         }
     }
 }
@@ -67,6 +38,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             HomeView()
+                .environmentObject(AuthVM())
         }
     }
 }
