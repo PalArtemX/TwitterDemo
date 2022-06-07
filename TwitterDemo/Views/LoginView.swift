@@ -15,7 +15,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
 
-            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back")
+            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back", corner: [.bottomLeft])
             
             textAndSecureField
             

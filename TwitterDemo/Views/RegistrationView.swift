@@ -16,7 +16,7 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
-            AuthHeaderView(headerTop: "Get started.", headerBottom: "Create your account")
+            AuthHeaderView(headerTop: "Get started.", headerBottom: "Create your account", corner: [.bottomRight])
             
             VStack(spacing: 40.0) {
                 CustomInputFieldView(imageName: "envelope", placeholderText: "Email", text: $email)

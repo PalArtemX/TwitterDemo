@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthHeaderView: View {
     let headerTop: String
     let headerBottom: String
+    let corner: UIRectCorner
     
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct AuthHeaderView: View {
             .padding(.leading)
             .background(Color.blue)
             .foregroundColor(.white)
-            .clipShape(RoundedShape(corners: [.bottomRight]))
+            .clipShape(RoundedShape(corners: corner))
         }
     }
 }
@@ -47,9 +48,9 @@ struct AuthHeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back")
+            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back", corner: [.bottomLeft])
                 .previewLayout(.sizeThatFits)
-            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back")
+            AuthHeaderView(headerTop: "Hello.", headerBottom: "Welcome Back", corner: [.bottomRight])
                 .preferredColorScheme(.dark)
                 .previewLayout(.sizeThatFits)
         }
