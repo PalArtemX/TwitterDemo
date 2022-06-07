@@ -22,9 +22,9 @@ struct TwitterDemoApp: App {
         WindowGroup {
             NavigationView {
                 HomeView()
-                    .environmentObject(authVM)
-                    .environmentObject(twitterVM)
             }
+            .environmentObject(authVM)
+            .environmentObject(twitterVM)
         }
     }
 }

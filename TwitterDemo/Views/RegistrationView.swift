@@ -13,6 +13,7 @@ struct RegistrationView: View {
     @State private var fullName = ""
     @State private var password = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
         VStack {
@@ -27,7 +28,7 @@ struct RegistrationView: View {
             .padding()
             
             AuthButtonView(title: "Sign") {
-                print("Sign...")
+                authVM.register(withEmail: email, password: password, fullName: fullName, username: username)
             }
             
             Spacer()
@@ -63,5 +64,6 @@ struct RegistrationView: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
+            .environmentObject(AuthVM())
     }
 }

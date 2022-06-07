@@ -16,7 +16,17 @@ class AuthVM: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser
-        
         print("DEBUG: User session is \(String(describing: userSession))")
+    }
+    
+    
+    // MARK: - Function
+    
+    func login(withEmail email: String, password: String) {
+        print("DEBUG: Login with email \(email)")
+    }
+    
+    func register(withEmail email: String, password: String, fullName: String, username: String) {
+        print("DEBUG: Register with email \(email)")
     }
 }

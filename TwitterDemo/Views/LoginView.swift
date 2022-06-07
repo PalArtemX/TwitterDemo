@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    
+    @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct LoginView: View {
             forgotPasswordButton
             
             AuthButtonView(title: "Sign In") {
-                print("Sign In...")
+                authVM.login(withEmail: email, password: password)
             }
             
             Spacer()
@@ -46,6 +46,7 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AuthVM())
     }
 }
 
