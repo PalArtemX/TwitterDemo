@@ -58,9 +58,10 @@ extension LoginView {
     // MARK: textAndSecureField
     var textAndSecureField: some View {
         VStack(spacing: 40.0) {
-            CustomInputFieldView(imageName: "envelope", placeholderText: "Email", text: $email)
+            CustomInputFieldView(imageName: "envelope", placeholderText: "Email", isSecureField: false, text: $email)
             
-            CustomInputFieldView(imageName: "lock", placeholderText: "Password", text: $password)
+            CustomInputFieldView(imageName: "lock", placeholderText: "Password", isSecureField: true, text: $password)
+            
         }
         .padding(.horizontal, 32)
         .padding(.top, 44)

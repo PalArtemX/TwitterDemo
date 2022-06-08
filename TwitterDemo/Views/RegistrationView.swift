@@ -20,10 +20,10 @@ struct RegistrationView: View {
             AuthHeaderView(headerTop: "Get started.", headerBottom: "Create your account", corner: [.bottomRight])
             
             VStack(spacing: 40.0) {
-                CustomInputFieldView(imageName: "envelope", placeholderText: "Email", text: $email)
-                CustomInputFieldView(imageName: "person", placeholderText: "Username", text: $username)
-                CustomInputFieldView(imageName: "person", placeholderText: "Full name", text: $fullName)
-                CustomInputFieldView(imageName: "lock", placeholderText: "Password", text: $password)
+                CustomInputFieldView(imageName: "envelope", placeholderText: "Email", isSecureField: false, text: $email)
+                CustomInputFieldView(imageName: "person", placeholderText: "Username", isSecureField: false, text: $username)
+                CustomInputFieldView(imageName: "person", placeholderText: "Full name", isSecureField: false, text: $fullName)
+                CustomInputFieldView(imageName: "lock", placeholderText: "Password", isSecureField: true, text: $password)
             }
             .padding()
             

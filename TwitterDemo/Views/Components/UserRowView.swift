@@ -45,9 +45,6 @@ struct UserRowView_Previews: PreviewProvider {
         Group {
             UserRowView()
                 .previewLayout(.sizeThatFits)
-            UserRowView()
-                .preferredColorScheme(.dark)
-                .previewLayout(.sizeThatFits)
         }
     }
 }
