@@ -11,6 +11,7 @@ struct PhotoSelectorView: View {
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
+    @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
         VStack(spacing: 45) {
@@ -35,9 +36,9 @@ struct PhotoSelectorView: View {
                 ImagePicker(selectedImage: $selectedImage)
             }
 
-            if profileImage != nil {
+            if let selectedImage = selectedImage {
                 AuthButtonView(title: "Continue") {
-                    // FIXME: - action
+                    authVM.uploadProfileImage(selectedImage)
                 }
             }
             
@@ -65,5 +66,6 @@ struct PhotoSelectorView: View {
 struct PhotoSelectorView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoSelectorView()
+            .environmentObject(AuthVM())
     }
 }
