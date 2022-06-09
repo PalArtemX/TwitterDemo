@@ -13,6 +13,7 @@ import Firebase
 class AuthVM: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthUser = false
     
     init() {
         self.userSession = Auth.auth().currentUser
@@ -45,7 +46,6 @@ class AuthVM: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.userSession = user
             
             let data = ["email" : email,
                         "username" : username.lowercased(),
@@ -54,7 +54,7 @@ class AuthVM: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did upload user data...")
+                    self.didAuthUser = true
                 }
         }
     }

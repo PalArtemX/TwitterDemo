@@ -17,6 +17,13 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
+            NavigationLink(isActive: $authVM.didAuthUser) {
+                PhotoSelectorView()
+            } label: {
+                //
+            }
+
+            
             AuthHeaderView(headerTop: "Get started.", headerBottom: "Create your account", corner: [.bottomRight])
             
             VStack(spacing: 40.0) {
