@@ -34,7 +34,7 @@ struct RegistrationView: View {
             }
             .padding()
             
-            AuthButtonView(title: "Sign") {
+            AuthButtonView(title: "Sign Up") {
                 authVM.register(withEmail: email, password: password, fullName: fullName, username: username)
             }
             

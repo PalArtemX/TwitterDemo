@@ -21,7 +21,8 @@ struct TwitterDemoApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView()
+                //HomeView()
+                PhotoSelectorView()
             }
             .environmentObject(authVM)
             .environmentObject(twitterVM)
