@@ -46,6 +46,8 @@
 		F8AEEBE7284FA9E8009F0A1C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8AEEBE6284FA9E8009F0A1C /* FirebaseFirestore */; };
 		F8AEEBE9284FA9E8009F0A1C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8AEEBE8284FA9E8009F0A1C /* FirebaseFirestoreSwift */; };
 		F8AEEBEB284FA9E8009F0A1C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F8AEEBEA284FA9E8009F0A1C /* FirebaseStorage */; };
+		F8FC635428533774003FDF93 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FC635328533774003FDF93 /* UserService.swift */; };
+		F8FC6356285339E9003FDF93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FC6355285339E9003FDF93 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		F8AEEBDC284F6DD0009F0A1C /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		F8AEEBDE284F7163009F0A1C /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
 		F8AEEBE1284FA800009F0A1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8FC635328533774003FDF93 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F8FC6355285339E9003FDF93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			children = (
 				F8AEEBBE284D2398009F0A1C /* TweetFilter.swift */,
 				F8AEEBC6284D2D50009F0A1C /* SideMenu.swift */,
+				F8FC6355285339E9003FDF93 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				F818CE6C28521ACA00BDE3C8 /* ImageUploader.swift */,
+				F8FC635328533774003FDF93 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -369,12 +375,14 @@
 				F8AEEBDF284F7163009F0A1C /* AuthButtonView.swift in Sources */,
 				F8AEEBBB284CFD2C009F0A1C /* UserRowView.swift in Sources */,
 				F8AEEBD9284F4EFB009F0A1C /* RoundedShape.swift in Sources */,
+				F8FC635428533774003FDF93 /* UserService.swift in Sources */,
 				F8AEEBC3284D2CE7009F0A1C /* SideMenuView.swift in Sources */,
 				F86462A228491CD3007E4CFC /* MessagesView.swift in Sources */,
 				F8AEEBCE284E2EBD009F0A1C /* SideMenuOptionRowView.swift in Sources */,
 				F88DE6BF28520E0400A891EB /* ImagePicker.swift in Sources */,
 				F8AEEBC1284D2410009F0A1C /* TwitterVM.swift in Sources */,
 				F864629E28491C4E007E4CFC /* ExploreView.swift in Sources */,
+				F8FC6356285339E9003FDF93 /* User.swift in Sources */,
 				F8AEEBD0284E5C07009F0A1C /* NewTweetView.swift in Sources */,
 				F86462A028491C86007E4CFC /* NotificationsView.swift in Sources */,
 				F8AEEBD2284E5D78009F0A1C /* TextAreaView.swift in Sources */,

@@ -16,11 +16,13 @@ class AuthVM: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
     @Published var didAuthUser = false
+    
     private var tempUserSession: FirebaseAuth.User?
+    private var service = UserService()
     
     init() {
         self.userSession = Auth.auth().currentUser
-        print("DEBUG: User session is \(String(describing: userSession))")
+        self.fetchUser()
     }
     
     
@@ -78,5 +80,11 @@ class AuthVM: ObservableObject {
                     self.userSession = self.tempUserSession
                 }
         }
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        
+        service.fetchUser(withUid: uid)
     }
 }
